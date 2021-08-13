@@ -10,8 +10,10 @@ import (
 
 var Routes map[string]func()(string)
 var GlobalRedisConfig *utils.RedisConfig
+var NowPlayingKey string
 
 func RegisterRoutes( fiber_app *fiber.App , redis_config *utils.RedisConfig ) {
+	NowPlayingKey = fmt.Sprintf( "%s.NOW_PLAYING" , redis_config.Prefix )
 	GlobalRedisConfig = redis_config
 	Routes = map[string]func()(string) {
 		"/pause": Pause ,
@@ -61,7 +63,9 @@ func Resume() ( result string ) {
 func Play() ( result string ) {
 	result = "success"
 	fmt.Println( "play" )
-	fmt.Println( GlobalRedisConfig )
+	db := utils.GetRedisConnection( GlobalRedisConfig )
+	exists := utils.RedisKeyExists( &db , NowPlayingKey )
+	fmt.Printf( "Exists === {%v}\n" , exists )
 	return
 }
 

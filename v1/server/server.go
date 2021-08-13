@@ -68,6 +68,7 @@ func NewServer( config_file_path string ) ( server Server ) {
 
 func ( s *Server ) SetupRedis() {
 	s.RedisClient = redis.Manager{}
+	// test = test
 	s.RedisClient.Connect(
 		fmt.Sprintf( "%s:%s" , s.Config.Redis.Host , s.Config.Redis.Port ) ,
 		s.Config.Redis.DB ,
