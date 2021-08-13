@@ -15,6 +15,38 @@ type ServerConfig struct {
 	Host string `json:"host"`
 	Port string `json:"port"`
 	Redis utils.RedisConfig `json:"redis"`
+	Apps struct {
+		Instagram struct {
+			Username string `json:"username"`
+			Password string `json:"password"`
+			Following []string `json:"following"`
+		} `json:"instagram"`
+		Skype struct {
+			Username string `json:"username"`
+			Password string `json:"password"`
+			Contacts []string `json:"contacts"`
+		} `json:"skype"`
+		Spotify struct {
+			Username string `json:"username"`
+			Password string `json:"password"`
+			Playlists []string `json:"playlists"`
+		} `json:"spotify"`
+		Twitch struct {
+			Username string `json:"username"`
+			Password string `json:"password"`
+			Following []string `json:"following"`
+		} `json:"twitch"`
+		Youtube struct {
+			Username string `json:"username"`
+			Password string `json:"password"`
+			Following []string `json:"following"`
+		} `json:"youtube"`
+		Zoom struct {
+			Username string `json:"username"`
+			Password string `json:"password"`
+			Contacts []string `json:"contacts"`
+		} `json:"zoom"`
+	}`json:"apps"`
 }
 type Server struct {
 	FiberApp *fiber.App `json:"fiber_app"`

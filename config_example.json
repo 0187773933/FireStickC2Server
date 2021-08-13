@@ -7,5 +7,37 @@
 		"db": 1 ,
 		"password": "" ,
 		"prefix": "FSC2"
+	} ,
+	"apps": {
+		"instagram": {
+			"username": "" ,
+			"password": "" ,
+			"following": []
+		} ,
+		"skype": {
+			"username": "" ,
+			"password": "" ,
+			"contacts": []
+		} ,
+		"spotify": {
+			"username": "" ,
+			"password": "" ,
+			"playlists": []
+		} ,
+		"twitch": {
+			"username": "" ,
+			"password": "" ,
+			"following": []
+		} ,
+		"youtube": {
+			"username": "" ,
+			"password": "" ,
+			"following": []
+		} ,
+		"zoom": {
+			"username": "" ,
+			"password": "" ,
+			"contacts": []
+		}
 	}
 }
