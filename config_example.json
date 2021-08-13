@@ -1,0 +1,11 @@
+{
+	"host": "localhost" ,
+	"port": "9363" ,
+	"redis": {
+		"host": "localhost" ,
+		"port": "6379" ,
+		"db": 1 ,
+		"password": "" ,
+		"prefix": "FSC2"
+	}
+}
